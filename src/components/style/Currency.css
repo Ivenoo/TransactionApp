@@ -6,7 +6,7 @@
   text-align:center;
   float:left;
   display:table;
-  height:180px;
+  height:200px;
   margin-top:10px;
   margin-left: 5%;
   box-shadow: 6px 6px 3px 3px black;
@@ -54,6 +54,9 @@
     rgba(0, 0, 0, 0.5) 0%,
     rgba(0, 0, 0, 0.5) 100%);
   
+}
+.Currency__ValidationBox{
+  margin-top:15px
 }
 .Currency__ButtonChange{
   font-family: var(--fontfamily-buttons);

@@ -7,7 +7,7 @@
   display:table;
   margin-right:5%;
   margin-top:10px;
-  height:180px;
+  height:200px;
   box-shadow: 6px 6px 3px 3px black;
   padding-bottom:10px;
 }
@@ -77,13 +77,14 @@ margin-bottom:3px;
   margin-top:5px;
 }
 .Validation__Success{
-  color: var(--Success-color);
+  color: var(--success-color);
   font-size:13px;
   display:block;
   width:100%;
   margin:0px;
   float:left;
-  display:none;
+  visibility: hidden;
+  margin-top:-20px;
 }
 
 

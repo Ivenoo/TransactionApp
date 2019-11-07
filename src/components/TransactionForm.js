@@ -24,7 +24,7 @@ const  TransactionForm = (props) => {
           </div>
         </div> 
         <div>
-        <p id="Success__Transaction" className="Validation__Success">POMYŚLNIE DODANO TRANSAKCJE !</p>  
+        <div id="Success__Transaction" className="Validation__Success">POMYŚLNIE DODANO TRANSAKCJE !</div>  
         </div>
         <input className="TransactionForm__Button TransactionForm__Inputs" type="submit"  value="Dodaj transakcje"/>
       </form>

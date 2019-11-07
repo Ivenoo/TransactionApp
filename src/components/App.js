@@ -9,7 +9,7 @@ class App extends React.Component {
   constructor(){
     super();
     this.state ={
-      Currency: 1,
+      currency: 1,
       defCurrency: 0,
       listTrans: [],
       currentValueInputCurrency: '',
@@ -21,10 +21,10 @@ class App extends React.Component {
           (res)=>{
             this.setState({
               defCurrency: parseFloat(res.data.rates[0].mid),
-              Currency: parseFloat(res.data.rates[0].mid)
+              currency: parseFloat(res.data.rates[0].mid)
             })
             const loader = document.querySelector('.loader');
-            loader.style.display="none";
+            loader.style.visibility="hidden";
           }).catch(()=>{
             console.log("Problem z pobaniem danych");
           })
@@ -41,79 +41,79 @@ class App extends React.Component {
 
         if(name.length === 0){
           if(costTrans.length !== 0 && costTrans !== '.' ){
-            validationCost.style.display='none';
+            validationCost.style.visibility='hidden';
             formCostInput.style= "border-color:var(--border-color)";
           }else{
-            validationCost.style.display='block';
+            validationCost.style.visibility='visible';
             formCostInput.style= "border-color:var(--validation-color);";
           }
           validationName.innerHTML = " PODAJ NAZWĘ TRANSAKCJI";
-          validationName.style.display='block';
+          validationName.style.visibility='visible';
           formNameInput.style= "border-color:var(--validation-color);";
           
           if(costTrans.length === 0){
             if(name.length !== 0  && name.charAt(0,1) !== ' '){
-              validationName.style.display='none';
+              validationName.style.visibility='hidden';
               formNameInput.style= "border-color:var(--validation-color)";
             }
             validationCost.innerHTML = "PODAJ KWOTĘ TRANSAKCJI !"
-            validationCost.style.display='block';
+            validationCost.style.visibility='visible';
             formCostInput.style= "border-color:var(--validation-color);";
           }else if(costTrans === '.'){
             if(name.length !== 0  && name.charAt(0,1) !== ' '){
-              validationName.style.display='none';
+              validationName.style.visibility='hidden';
               formNameInput.style= "border-color:var(--border-color)";
             }
             validationCost.innerHTML = "PODAJ PRAWIDŁOWĄ KWOTĘ TRANSAKCJI !"
-            validationCost.style.display='block';
+            validationCost.style.visibility='visible';
             formCostInput.style= "border-color:var(--validation-color);";
           }
 
         }else if(name.charAt(0,1) === ' '){
           if(costTrans.length !== 0 && costTrans !== '.' ){
-            validationCost.style.display='none';
+            validationCost.style.visibility='hidden';
             formCostInput.style= "border-color:var(--border-color)";
           }else{
-            validationCost.style.display='block';
+            validationCost.style.visibility='visible';
             formCostInput.style= "border-color:var(--validation-color);";
           }
           validationName.innerHTML = " NAZWA NIE MOŻE ZACZYNAĆ SIĘ OD SPACJI";
-          validationName.style.display='block';
+          validationName.style.visibility='visible';
           formNameInput.style= "border-color:var(--validation-color);";
 
           if(costTrans.length === 0){
             if(name.length !== 0  && name.charAt(0,1) !== ' '){
-              validationName.style.display='none';
+              validationName.style.visibility='hidden';
               formNameInput.style= "border-color:var(--validation-color)";
             }
             validationCost.innerHTML = "PODAJ KWOTĘ TRANSAKCJI !"
-            validationCost.style.display='block';
+            validationCost.style.visibility='visible';
             formCostInput.style= "border-color:var(--validation-color);";
           }else if(costTrans === '.'){
             if(name.length !== 0  && name.charAt(0,1) !== ' '){
-              validationName.style.display='none';
+              validationName.style.visibility='hidden';
               formNameInput.style= "border-color:var(--border-color)";
             }
             validationCost.innerHTML = "PODAJ PRAWIDŁOWĄ KWOTĘ TRANSAKCJI !"
-            validationCost.style.display='block';
+            validationCost.style.visibility='visible';
             formCostInput.style= "border-color:var(--validation-color);";
           }
 
         }else if(costTrans.length === 0){
           if(name.length !== 0  && name.charAt(0,1) !== ' '){
-            validationName.style.display='none';
-            formNameInput.style= "border-color:var(--validation-color)";
+            validationName.style.visibility='hidden';
+            formNameInput.style= "border-color:var(--border-color)";
           }
           validationCost.innerHTML = "PODAJ KWOTĘ TRANSAKCJI !"
-          validationCost.style.display='block';
+          validationCost.style.visibility='visible';
           formCostInput.style= "border-color:var(--validation-color);";
         }else if(costTrans === '.'){
           if(name.length !== 0  && name.charAt(0,1) !== ' '){
-            validationName.style.display='none';
+            validationName.style.visibility='hidden';
             formNameInput.style= "border-color:var(--border-color)";
           }
           validationCost.innerHTML = "PODAJ PRAWIDŁOWĄ KWOTĘ TRANSAKCJI !"
-          validationCost.style.display='block';
+          validationCost.style.visibility='visible';
           formCostInput.style= "border-color:var(--validation-color);";
         }else{
           const obj ={
@@ -125,19 +125,19 @@ class App extends React.Component {
             listTrans: this.state.listTrans,
             // currentValueInputCost: ''
           })
-         const Success_trans = document.querySelector("#Success__Transaction")
-          Success_trans.style.display ="block";
-          formNameInput.style= "border-color:var(--Success-color)";
-          formCostInput.style= "border-color:var(--Success-color)";
+         const success_trans = document.querySelector("#Success__Transaction")
+          success_trans.style.visibility ="visible";
+          formNameInput.style= "border-color:var(--success-color)";
+          formCostInput.style= "border-color:var(--success-color)";
           // formNameInput.value = "";
-          validationCost.style.display='none';
-          validationName.style.display='none';
-          setTimeout(this.finishSuccessForm,1500,Success_trans,formNameInput,formCostInput)
+          validationCost.style.visibility='hidden';
+          validationName.style.visibility='hidden';
+          setTimeout(this.finishSuccessForm,1500,success_trans,formNameInput,formCostInput)
         }  
   }
 
-  finishSuccessForm = (Success_trans,formNameInput,formCostInput) =>{
-    Success_trans.style.display ="none";
+  finishSuccessForm = (success_trans,formNameInput,formCostInput) =>{
+    success_trans.style.visibility ="hidden";
     formNameInput.style= "border-color:var(--border-color)";
     formCostInput.style= "border-color:var(--border-color)";
   }
@@ -181,32 +181,33 @@ class App extends React.Component {
   changeCurrency = () =>{
     const newCurrencyValue = document.querySelector('#CurrencyValue').value;
     const validation = document.querySelector('.Currency__Validation');
-    const CurrencyValueInput  = document.querySelector('#CurrencyValue');
+    const currencyValueInput  = document.querySelector('#CurrencyValue');
     if(newCurrencyValue > 0){
-      if(parseFloat(newCurrencyValue) !== parseFloat(this.state.Currency)){
+      if(parseFloat(newCurrencyValue) !== parseFloat(this.state.currency)){
         this.setState({
-          Currency: parseFloat(newCurrencyValue),
+          currency: parseFloat(newCurrencyValue),
           currentValueInputCurrency: ''
         })
         validation.innerHTML = 'POMYŚLNIE ZMIENIONO WALUTĘ !'
-        validation.style.display='block';
-        validation.style.color='var(--Success-color)';
-        CurrencyValueInput.style= "border-color:var(--Success-color)";
-        setTimeout(this.addSuccess,1500,CurrencyValueInput,validation)
+        validation.style.visibility='visible';
+        validation.style.color='var(--success-color)';
+        currencyValueInput.style= "border-color:var(--success-color)";
+        currencyValueInput.value = "";
+        setTimeout(this.addSuccess,1500,currencyValueInput,validation)
       }else{
         validation.innerHTML = 'PODAJ INNĄ WARTOŚĆ OD AKTUALNEJ !'
-        validation.style.display='block';
-        CurrencyValueInput.style= "border-color:var(--validation-color)";
+        validation.style.visibility='visible';
+        currencyValueInput.style= "border-color:var(--validation-color)";
       }
     }else{
       if(newCurrencyValue === '.'){
         validation.innerHTML = 'WPISZ PRAWIDŁOWĄ WARTOŚĆ WALUTY !'
-        validation.style.display='block';
-        CurrencyValueInput.style= "border-color:var(--validation-color)";
+        validation.style.visibility='visible';
+        currencyValueInput.style= "border-color:var(--validation-color)";
       }else{
         validation.innerHTML = 'PODAJ WARTOŚĆ WALUTY !'
-        validation.style.display='block';
-        CurrencyValueInput.style= "border-color:var(--validation-color)";
+        validation.style.visibility='visible';
+        currencyValueInput.style= "border-color:var(--validation-color)";
       }
 
     }
@@ -214,15 +215,15 @@ class App extends React.Component {
   }
 
   addSuccess = (e,validation) =>{
-        validation.style.display='none';
+        validation.style.visibility='hidden';
         validation.style.color='var(--validation-color)';
         e.style= "border-color:var(--border-color)";
-        e.value = "";
+        
   }
 
   backCurrency = () =>{
     this.setState({
-      Currency: this.state.defCurrency
+      currency: this.state.defCurrency
     })
   }
   render(){
@@ -231,9 +232,9 @@ class App extends React.Component {
         <div className="loader">
 
         </div>
-      <Currency changeCurrency={this.changeCurrency} currentValueInput={this.state.currentValueInputCurrency} backCurrency={this.backCurrency} changeValueInput={this.changeValueInput.bind(this)} currentCurrency={this.state.Currency} defCurrency={this.state.defCurrency}/>
+      <Currency changeCurrency={this.changeCurrency} currentValueInput={this.state.currentValueInputCurrency} backCurrency={this.backCurrency} changeValueInput={this.changeValueInput.bind(this)} currentCurrency={this.state.currency} defCurrency={this.state.defCurrency}/>
       <TransactionForm currentValueInput={this.state.currentValueInputCost} changeValueInput={this.changeValueInput.bind(this)} addTrans={this.addTrans.bind(this)}/>
-      <TransactionList delAllTrans={this.delAllTrans} delOneTrans={this.delOneTrans} currentCurrency={this.state.Currency} listTrans={this.state.listTrans} />
+      <TransactionList delAllTrans={this.delAllTrans} delOneTrans={this.delOneTrans} currentCurrency={this.state.currency} listTrans={this.state.listTrans} />
       </div>
     );
   }

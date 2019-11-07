@@ -16,7 +16,7 @@ const  Currency = (props) => {
             <input id="CurrencyValue" value={props.currentValueInput} onChange={props.changeValueInput.bind(this,1)} placeholder={props.currentCurrency.toFixed(2)} /> 
             <span>PLN</span>
           </div>
-          <div>
+          <div className="Currency__ValidationBox">
             <span className="Currency__Validation Validation"> PODAJ WARTOSC WALUTY !!</span>
           </div>
           <div className="Currency__ButtonBox">

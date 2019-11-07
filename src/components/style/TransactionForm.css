@@ -1,0 +1,123 @@
+.TransactionForm{
+  background:var(--boxes-background);
+  border-radius: 20px;
+  width:50%;
+  padding: 0% 1% 0% 1%;
+  float:right;
+  display:table;
+  margin-right:5%;
+  margin-top:10px;
+  height:180px;
+  box-shadow: 6px 6px 3px 3px black;
+  padding-bottom:10px;
+}
+
+.TransactionForm__Title{
+  text-align:center;
+}
+.TransactionForm__Form{
+  text-align:center;
+ width:100%;
+  
+}
+.TransactionForm__NameBox{
+  float:left;
+  display:inline;
+  margin-left:10%
+}
+.TransactionForm__CostBox{
+  float:right;
+  display:inline;
+  margin-right:10%;
+  margin-bottom:10px;
+}
+.TransactionForm__Inputs{
+  width:140px;
+  margin-left:7px;
+  background: var(--boxes-background);
+  background-image: linear-gradient(
+    0deg,
+    rgba(0,0,0,0.5) 0%,
+    rgba(0,0,0,0.5) 100%);
+}
+.TransactionForm__Name,
+.TransactionForm__Cost{
+  border:solid 1.2px var(--border-color);
+  height:30px;
+  padding-left: 10px;
+}
+.TransactionForm__Button{
+  width:120px;
+  font-family: var(--fontfamily-buttons);
+  color:var(--text-color);
+  background: var(--button-color);
+  border:none;
+  box-shadow: 3px 3px 2px 2px black;
+  transition-duration:1s;
+  border-radius:8px;
+  padding:8px;
+  cursor:pointer;
+  float:left;
+  font-size:13px;
+  margin-top:10px;
+  margin-left:50%;
+  transform: translateX(-50%);
+}
+.TransactionForm__Button:hover{
+  transform:scale(1.1)
+  translateX(-45%);
+}
+
+.TransactionForm__Spans{
+display:block;
+margin-bottom:3px;
+}
+.TransactionForm__CostValidation,
+.TransactionForm__NameValidation{
+  margin-top:5px;
+}
+.Validation__Success{
+  color: var(--Success-color);
+  font-size:13px;
+  display:block;
+  width:100%;
+  margin:0px;
+  float:left;
+  display:none;
+}
+
+
+@media only screen and (max-width: 899px) {
+  .TransactionForm{
+    height:185px;
+    width:88%;
+    display:block;
+  }
+}
+@media only screen and (max-width: 629px) {
+  .TransactionForm{
+    height:300px;
+    width:88%;
+    display:block;
+  }
+  .TransactionForm__NameBox{
+    width:100%;
+    margin-left:0px;
+  }
+  .TransactionForm__NameValidation{
+    text-align:center;
+  }
+  .TransactionForm__NameValidationSpan{
+    margin:0px auto;
+    margin-bottom:15px;
+  }
+  .TransactionForm__CostBox{
+    width:100%;
+    margin-right:0px;
+  }
+  .TransactionForm__CostValidationSpan{
+    margin:0px auto;
+  }
+}
+
+

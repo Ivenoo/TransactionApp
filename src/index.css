@@ -1,0 +1,92 @@
+
+*{
+  --background-color: #202020;
+  --resoult-background: #500050;
+  --list-backgorund: #4d4d4d;
+  --listTitle-backgorund: #111111;
+  --boxes-background: #133819;
+  --border-color: #000000;
+  --text-color: #ffffff;
+  --placeholder-color: #727272;
+  --validation-color: #a70000;
+  --Success-color: green;
+  --button-color: #183a57;
+  --fontfamily-buttons: "Franklin Gothic Heavy";
+}
+
+
+html{
+  background: var(--background-color);
+  height:110vh;
+  overflow-X:hidden;
+  overflow-Y:hidden;
+}
+
+body {
+  color:var(--text-color);
+  font-weight:600;
+  font-family:"arial";
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::placeholder{
+  color:var(--placeholder-color);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: var(--list-background); 
+}
+ 
+
+::-webkit-scrollbar-thumb {
+  background: rgb(172, 172, 172); 
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(172, 172, 172); 
+}
+
+
+table, th, td {
+  border: 1px solid var(--border-color);
+  padding:0px;
+}
+.Validation{
+  color:var(--validation-color);
+  font-weight:bold;
+  display:none;
+  font-size:13px;
+  height:20px;
+  max-width:200px;
+}
+
+button, input{
+  outline:none;
+}
+input{
+  color: var(--font-color);
+  border-radius: 6px;
+}
+table{
+  border-radius:5px;
+}
+
+@media only screen and (max-width: 899px) {
+  html{
+    overflow-y:scroll;
+  }
+}

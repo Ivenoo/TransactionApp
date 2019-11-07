@@ -1,0 +1,99 @@
+.Currency{
+  background:var(--boxes-background);
+  width:30%;
+  border-radius: 20px;
+  padding: 0% 1% 0% 1%;
+  text-align:center;
+  float:left;
+  display:table;
+  height:180px;
+  margin-top:10px;
+  margin-left: 5%;
+  box-shadow: 6px 6px 3px 3px black;
+  padding-bottom:10px;
+}
+
+.Currency__Box{
+  display:block;
+  text-align: center;
+  vertical-align: middle; 
+}
+.Currency__BankCurrency{
+  text-align:center;
+  width:100%;
+  margin-top:0px;
+  font-size:25px;
+}
+.Currency__CurrentCurrency{
+  margin-top:0px;
+  margin-bottom:0px;
+}
+.Currency__Form{
+  width:100%;
+  display:inline-block;
+  text-align: center;
+}
+.Currency__CurrentCurrency{
+  text-align:center;
+  margin-top:25px;
+}
+.Currency_BankCurrencyValue{
+  font-size:13px;
+  margin:0px;
+}
+
+.Currency__CurrentCurrency input{
+  margin: 0px 5px 0px 10px;
+  border:solid 1.2px var(--border-color);
+  color:white;
+  padding:3px;
+  background:none;
+  width:100px;
+  background-image: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.5) 100%);
+  
+}
+.Currency__ButtonChange{
+  font-family: var(--fontfamily-buttons);
+  color:var(--text-color);
+  background: var(--button-color);
+  border:none;
+  box-shadow: 3px 3px 2px 2px black;
+  transition-duration:1s;
+  border-radius:8px;
+  margin-top:18px;
+  cursor:pointer;
+  padding:8px;
+  font-size:13px;
+}
+.Currency__ButtonChange:hover{
+  transform:scale(1.1);
+}
+
+.Back_defCurrency{
+  background:none;
+  border:none;
+  cursor:pointer;
+  color:rgb(0, 145, 0);
+}
+.Currency__Validation{
+ 
+  margin: 0px auto;
+  margin-top:5px !important;
+}
+
+@media only screen and (max-width: 899px) {
+  .Currency{
+    width:88%;
+    margin-bottom:10px;
+    height:147.27px;
+  }
+  .Currency__CurrentCurrency{
+    margin-top:0px;
+  }
+  .Currency__CurrentCurrency{
+    font-size:20px;
+  }
+}

@@ -1,0 +1,145 @@
+.TransactionList{
+  background: var(--boxes-background);
+  border-radius: 20px;
+  width: 90%;
+  padding-top:10px;
+  text-align:center;
+  display:block;
+  margin-top: 250px;
+  margin-left: 5%;
+  padding-bottom:10px;
+  box-shadow: 6px 6px 3px 3px black;
+  height:auto;
+  max-height: calc( 100vh - 350px );
+}
+.TransactionList_ValueBox{
+  text-align:center;
+  margin-bottom:10px;
+  max-height: 22vh;
+  overflow:auto;
+  scrollbar-color: rgb(255, 255, 255) var(--boxes-background);
+  scrollbar-width: thin;
+  overflow-x:hidden;
+}
+.highestTrans{
+  margin-top:5px;
+  min-height: 52.8px;
+  margin-bottom:15px;
+}
+.heighestTrans span{
+    top: 21px;
+    position: relative;
+}
+
+
+.highestTrans_EUR,
+.highestTrans_PLN{
+  text-align:center;
+  padding-right: 5px;
+}
+.TableOneItem__Title{
+  background:var(--listTitle-backgorund);
+  position:sticky;
+  top:0;
+  opacity:1;
+}
+.TableOneItem{
+  text-align:center;
+  width:98%;
+  background:var(--list-backgorund);
+  border-spacing: 0px;
+  margin-left:1%;
+}
+.TableOneItem__CostEUR,
+.TableOneItem__CostPLN{
+  text-align:right;
+  padding-right:5px;
+}
+.TableOneItem__Delete{
+  background:none;
+  border:none;
+  cursor: pointer;
+  color:white;
+  transition-duration:1s;
+}
+.TableOneItem__Delete:hover{
+  color:var(--validation-color);
+}
+.SumTrans{
+  width:49%;
+ display:inline;
+ float:left;
+}
+
+.TitleDel__Title{
+  width:16%;
+  padding:5px;
+}
+.Button__DeleteAll{
+  font-family: var(--fontfamily-buttons);
+  color:var(--text-color);
+  background: none;
+  border:none;
+  transition-duration:1s;
+  cursor:pointer;
+  font-size:15px;
+}
+.Button__DeleteAll:hover{
+  color:var(--validation-color);
+}
+
+.Sum_Table{
+  background: var(--list-backgorund);
+  width:100%;
+  margin-bottom:10px;
+  border-spacing: 0px;
+}
+.Sum__Title{
+  width:50%;
+}
+.Sum__Box{
+  width:98%;
+  margin-left:1%;
+  position:static;
+  bottom:0px;
+}
+
+
+@media only screen and (max-width: 899px) {
+  .TransactionList{
+    margin-top:405px;
+    height:auto;
+    width:88%;
+    display:block;
+    margin-bottom:20px;
+  }
+  .TransactionList_ValueBox{
+    height:100%;
+    max-height:100%;
+  }
+  .Sum__Box{
+    width:88%;
+    margin-left:1%;
+    position:static;
+    width:98%;
+    bottom:0px;
+    bottom:25px;
+  }
+}
+@media only screen and (max-width: 629px) {
+  .TransactionList{
+    margin-top:520px;
+  }
+  .TableOneItem__Value{
+    max-width:50px;
+    text-overflow:elipsis;
+    word-wrap:break-word;
+    overflow:hidden;
+  }
+  .Sum__Trans{
+    max-width:50px;
+    text-overflow:elipsis;
+    word-wrap:break-word;
+    overflow:hidden;
+  }
+}

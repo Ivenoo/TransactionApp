@@ -18,7 +18,7 @@ const  TransactionForm = (props) => {
           </div>
         <div className="TransactionForm__CostBox">
         <label className="TransactionForm__Spans">Kwota transakcji: </label>
-        <input id="Form_Cost" className="TransactionForm__Cost TransactionForm__Inputs" placeholder="00.00 EUR" value={props.actualValueInput} onChange={props.changeValueInput.bind(this,2)}/>
+        <input id="Form_Cost" className="TransactionForm__Cost TransactionForm__Inputs" placeholder="00.00 EUR" value={props.currentValueInputCost} onChange={props.changeValueInput.bind(this,2)}/>
         <div className="TransactionForm__CostValidation">
             <div className=" Validation TransactionForm__CostValidationSpan">PODAJ KWOTE TRANSAKCJI !!</div>
           </div>

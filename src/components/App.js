@@ -154,7 +154,7 @@ class App extends React.Component {
       listTrans: []
     })
   }
- 
+
 
   changeValueInput = (numb,e) =>{
     let currentValueInput = e.currentTarget.value;
@@ -233,7 +233,7 @@ class App extends React.Component {
 
         </div>
       <Currency changeCurrency={this.changeCurrency} currentValueInput={this.state.currentValueInputCurrency} backCurrency={this.backCurrency} changeValueInput={this.changeValueInput.bind(this)} currentCurrency={this.state.currency} defCurrency={this.state.defCurrency}/>
-      <TransactionForm currentValueInput={this.state.currentValueInputCost} changeValueInput={this.changeValueInput.bind(this)} addTrans={this.addTrans.bind(this)}/>
+      <TransactionForm currentValueInputCost={this.state.currentValueInputCost} changeValueInput={this.changeValueInput.bind(this)} addTrans={this.addTrans.bind(this)}/>
       <TransactionList delAllTrans={this.delAllTrans} delOneTrans={this.delOneTrans} currentCurrency={this.state.currency} listTrans={this.state.listTrans} />
       </div>
     );

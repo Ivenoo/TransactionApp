@@ -32,7 +32,7 @@ class App extends React.Component {
               defCurrency: parseFloat(res.data.rates[0].mid),
               currency: parseFloat(res.data.rates[0].mid)
             })
-            const loader = document.querySelector('.loader');
+            const loader = document.querySelector('.Loader-Background');
             loader.style.visibility="hidden";
           }).catch(()=>{
             console.log("Problem z pobaniem danych");

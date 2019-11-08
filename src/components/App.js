@@ -245,8 +245,8 @@ class App extends React.Component {
   render(){
     return (
       <div className="App_body">
-        <div className="loader">
-
+        <div className="Loader-Background">
+          <img className="Loader" src='Loader.gif' alt="Loader"/>
         </div>
       <Currency changeCurrency={this.changeCurrency} currentValueInput={this.state.currentValueInputCurrency} backCurrency={this.backCurrency} changeValueInput={this.changeValueInput.bind(this)} currentCurrency={this.state.currency} defCurrency={this.state.defCurrency}/>
       <TransactionForm currentValueInputCost={this.state.currentValueInputCost} changeValueInput={this.changeValueInput.bind(this)} addTrans={this.addTrans.bind(this)}/>

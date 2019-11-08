@@ -9,12 +9,16 @@
   margin-top: 20px;
 }
 
-.loader{
+.Loader-Background{
   width:100vw;
   height:100vh;
   background:black;
   position:absolute;
   z-index:99999;
+  display:grid;
+}
+.Loader{
+  margin:auto;
 }
 .Empty_List{
   width:100%;

@@ -13,10 +13,19 @@ class App extends React.Component {
       defCurrency: 0,
       listTrans: [],
       currentValueInputCurrency: '',
-      currentValueInputCost: ''
+      currentValueInputCost: '',
     }
 }
+
   componentDidMount(){
+    if(!localStorage.getItem('myTransaction')){
+      localStorage.setItem('myTransaction' , '[]')
+    }else{
+      this.setState({
+        listTrans:JSON.parse(localStorage.getItem('myTransaction'))
+       }) 
+      }
+
     axios.get('http://api.nbp.pl/api/exchangerates/rates/A/EUR/').then(
           (res)=>{
             this.setState({
@@ -28,6 +37,7 @@ class App extends React.Component {
           }).catch(()=>{
             console.log("Problem z pobaniem danych");
           })
+          
   }
 
   addTrans = (e) => {
@@ -121,8 +131,11 @@ class App extends React.Component {
             costTrans
           }
           this.state.listTrans.push(obj)
+          console.log(this.state.listTrans)
+          localStorage.setItem("myTransaction", JSON.stringify(this.state.listTrans))
           this.setState({
             listTrans: this.state.listTrans,
+            idItemList: this.state.idItemList+1,
             // currentValueInputCost: ''
           })
          const success_trans = document.querySelector("#Success__Transaction")
@@ -144,6 +157,7 @@ class App extends React.Component {
 
   delOneTrans = (index) =>{
     this.state.listTrans.splice(index, 1)
+    localStorage.setItem("myTransaction", JSON.stringify(this.state.listTrans))
     this.setState({
       listTrans: this.state.listTrans
     }) 
@@ -153,6 +167,7 @@ class App extends React.Component {
     this.setState({
       listTrans: []
     })
+    localStorage.setItem("myTransaction", JSON.stringify([]))
   }
 
 

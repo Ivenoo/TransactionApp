@@ -90,3 +90,7 @@ table{
     overflow-y:scroll;
   }
 }
+
+::-moz-focus-inner{
+  border:0;
+}

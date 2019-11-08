@@ -34,6 +34,7 @@
 .TransactionForm__Inputs{
   width:140px;
   margin-left:7px;
+  padding-right:12px;
   background: var(--boxes-background);
   background-image: linear-gradient(
     0deg,

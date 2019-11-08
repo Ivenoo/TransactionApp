@@ -12,7 +12,7 @@ const  TransactionList = (props) => {
       <span> NAJWYŻSZA AKTUALNA TRANSAKCJA:</span><br/>
       <div className="highestTrans">
       {props.listTrans.map((event,index) =>{
-        if(event.costTrans > maxTrans){
+        if(parseFloat(event.costTrans) > maxTrans){
           maxTrans = event.costTrans
           maxTransName= event.name
         }

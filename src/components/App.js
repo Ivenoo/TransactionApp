@@ -48,7 +48,8 @@ class App extends React.Component {
       const validationCost = document.querySelector('.TransactionForm__CostValidationSpan');
       const formNameInput = document.querySelector('#Form_Name');
       const formCostInput = document.querySelector('#Form_Cost');
-
+      const success_trans = document.querySelector("#Success__Transaction");
+      this.finishSuccessForm(success_trans,formNameInput,formCostInput)
         if(name.length === 0){
           if(costTrans.length !== 0 && costTrans !== '.' ){
             validationCost.style.visibility='hidden';
@@ -136,13 +137,12 @@ class App extends React.Component {
           this.setState({
             listTrans: this.state.listTrans,
             idItemList: this.state.idItemList+1,
-            // currentValueInputCost: ''
+            currentValueInputCost: ''
           })
-         const success_trans = document.querySelector("#Success__Transaction")
           success_trans.style.visibility ="visible";
           formNameInput.style= "border-color:var(--success-color)";
           formCostInput.style= "border-color:var(--success-color)";
-          // formNameInput.value = "";
+          formNameInput.value = "";
           validationCost.style.visibility='hidden';
           validationName.style.visibility='hidden';
           setTimeout(this.finishSuccessForm,1500,success_trans,formNameInput,formCostInput)
@@ -197,6 +197,7 @@ class App extends React.Component {
     const newCurrencyValue = document.querySelector('#CurrencyValue').value;
     const validation = document.querySelector('.Currency__Validation');
     const currencyValueInput  = document.querySelector('#CurrencyValue');
+    this.addSuccess(currencyValueInput,validation);
     if(newCurrencyValue > 0){
       if(parseFloat(newCurrencyValue) !== parseFloat(this.state.currency)){
         this.setState({
@@ -249,7 +250,9 @@ class App extends React.Component {
         </div>
       <Currency changeCurrency={this.changeCurrency} currentValueInput={this.state.currentValueInputCurrency} backCurrency={this.backCurrency} changeValueInput={this.changeValueInput.bind(this)} currentCurrency={this.state.currency} defCurrency={this.state.defCurrency}/>
       <TransactionForm currentValueInputCost={this.state.currentValueInputCost} changeValueInput={this.changeValueInput.bind(this)} addTrans={this.addTrans.bind(this)}/>
-      <TransactionList delAllTrans={this.delAllTrans} delOneTrans={this.delOneTrans} currentCurrency={this.state.currency} listTrans={this.state.listTrans} />
+      {(this.state.listTrans.length > 0)?
+      <TransactionList delAllTrans={this.delAllTrans} delOneTrans={this.delOneTrans} currentCurrency={this.state.currency} listTrans={this.state.listTrans} />:
+      <p className="Empty_List">AKTUALNIE NIE  DODANO ŻADNEJ TRANSAKCJI</p>}
       </div>
     );
   }

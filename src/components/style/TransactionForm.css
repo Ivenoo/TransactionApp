@@ -23,13 +23,16 @@
 .TransactionForm__NameBox{
   float:left;
   display:inline;
-  margin-left:10%
+  margin-left:10%;
+  height: 96.38px;
+  width: 200px;
 }
 .TransactionForm__CostBox{
   float:right;
   display:inline;
   margin-right:10%;
   margin-bottom:10px;
+  width:200px;
 }
 .TransactionForm__Inputs{
   width:140px;
@@ -89,7 +92,7 @@ margin-bottom:3px;
 }
 
 
-@media only screen and (max-width: 899px) {
+@media only screen and (max-width:1020px) {
   .TransactionForm{
     height:185px;
     width:88%;

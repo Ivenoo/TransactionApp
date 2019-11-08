@@ -87,7 +87,7 @@
   margin-top:5px !important;
 }
 
-@media only screen and (max-width: 899px) {
+@media only screen and (max-width: 1020px) {
   .Currency{
     width:88%;
     margin-bottom:10px;
@@ -96,7 +96,14 @@
   .Currency__CurrentCurrency{
     margin-top:0px;
   }
-  .Currency__CurrentCurrency{
-    font-size:20px;
-  }
+
+}
+
+@media only screen and (max-width: 629px) {
+.Currency__CurrentCurrency{
+  font-size:18px;
+}
+.Currency_BankCurrencyValue{
+  font-size:10px;
+}
 }

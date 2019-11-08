@@ -35,7 +35,8 @@ const  TransactionList = (props) => {
          </table>:
          <span> BRAK TRANSAKCJI</span>
      }
-      </div>   
+      </div>  
+       
       <span>LISTA TRANSAKCJI:</span>  
       <div className="TransactionList_ValueBox">  
         <table className="TableOneItem">

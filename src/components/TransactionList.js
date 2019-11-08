@@ -9,7 +9,7 @@ const  TransactionList = (props) => {
   let maxTransName = "BRAK TRANSAKCJI";
   return (
     <div className="TransactionList">
-      <span> NAJWYŻSZA AKTUALNA TRANSAKCJA:</span><br/>
+      <h3> NAJWYŻSZA AKTUALNA TRANSAKCJA:</h3>
       <div className="highestTrans">
       {props.listTrans.map((event,index) =>{
         if(parseFloat(event.costTrans) > maxTrans){
@@ -33,11 +33,11 @@ const  TransactionList = (props) => {
              </tr>
            </tbody>
          </table>:
-         <span> BRAK TRANSAKCJI</span>
+         <div> BRAK TRANSAKCJI</div>
      }
       </div>  
        
-      <span>LISTA TRANSAKCJI:</span>  
+      <h3>LISTA TRANSAKCJI:</h3>  
       <div className="TransactionList_ValueBox">  
         <table className="TableOneItem">
           <tbody>
@@ -64,7 +64,7 @@ const  TransactionList = (props) => {
         </table>
       </div>
       <div className="Sum__Box">
-      <span> SUMA TRANSAKCJI:</span>
+      <h3> SUMA TRANSAKCJI:</h3>
       <div className="Sum_TableBox"> 
         <table className="Sum_Table">
           <tbody>

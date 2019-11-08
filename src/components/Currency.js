@@ -6,10 +6,10 @@ const  Currency = (props) => {
     <>
     <div className="Currency__BankCurrency">
     <p className="Currency__CurrentCurrency"> AKTUALNY  KURS EURO WYNOSI : 1 EUR =  {props.currentCurrency.toFixed(2)} PLN</p>
-    <p className="Currency_BankCurrencyValue"> ( aktualny kurs według  NBP wynosi 1 EUR = {props.defCurrency.toFixed(2)} PLN) <button className="Back_defCurrency" href=""  onClick={props.backCurrency}>przywróć ten kurs</button></p>
+    <p className="Currency_BankCurrencyValue"> ( aktualny kurs według  NBP wynosi 1 EUR = {props.defCurrency.toFixed(2)} PLN) <button className="Back_defCurrency" href=""  onClick={props.backCurrency}>przywróć kurs</button></p>
     </div>
     <div className="Currency">
-        <p className="Currency__Form"> ZMIEŃ KURS EURO</p>
+        <h3 className="Currency__Form"> ZMIEŃ KURS EURO</h3>
         <div className="Currency__Box">
           <div className="Currency__CurrentCurrency">
             <span>1 EUR =</span>

@@ -17,6 +17,27 @@ class App extends React.Component {
     }
 }
 
+getNBPCurrency = () =>{
+  axios.get('h31232ttp://api.nbp.pl/api/exchangerates/rates/A/EUR/').then(
+    (res)=>{
+      this.setState({
+        defCurrency: parseFloat(res.data.rates[0].mid),
+        currency: parseFloat(res.data.rates[0].mid)
+      })
+      setTimeout(() =>{
+        const loader = document.querySelector('.Loader-Background');
+        loader.style.visibility="hidden"
+      },2000)     
+    }).catch(()=>{    
+       const defaultCurrencyButton = document.querySelector('.Currency_BankCurrencyValue')
+       defaultCurrencyButton.style.display="none";
+      setTimeout(() =>{
+        const loader = document.querySelector('.Loader-Background');
+        loader.style.visibility="hidden"
+        alert("Problem z pobaniem danych Wpisz walute ręcznie");
+      },2000)
+    })  
+}
   componentDidMount(){
     if(!localStorage.getItem('myTransaction')){
       localStorage.setItem('myTransaction' , '[]')
@@ -26,18 +47,7 @@ class App extends React.Component {
        }) 
       }
 
-    axios.get('http://api.nbp.pl/api/exchangerates/rates/A/EUR/').then(
-          (res)=>{
-            this.setState({
-              defCurrency: parseFloat(res.data.rates[0].mid),
-              currency: parseFloat(res.data.rates[0].mid)
-            })
-            const loader = document.querySelector('.Loader-Background');
-            loader.style.visibility="hidden";
-          }).catch(()=>{
-            console.log("Problem z pobaniem danych");
-          })
-          
+      this.getNBPCurrency();  
   }
 
   addTrans = (e) => {

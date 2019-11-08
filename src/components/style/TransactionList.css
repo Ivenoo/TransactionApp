@@ -10,12 +10,12 @@
   padding-bottom:10px;
   box-shadow: 6px 6px 3px 3px black;
   height:auto;
-  max-height: calc( 100vh - 350px );
+  max-height: calc( 100vh - 370px );
 }
 .TransactionList_ValueBox{
   text-align:center;
-  margin-bottom:10px;
-  max-height: 22vh;
+  margin-bottom:20px;
+  max-height: 15vh;
   overflow:auto;
   scrollbar-color: rgb(255, 255, 255) var(--boxes-background);
   scrollbar-width: thin;
@@ -24,7 +24,7 @@
 .highestTrans{
   margin-top:5px;
   min-height: 52.8px;
-  margin-bottom:15px;
+  margin-bottom:25px;
 }
 .heighestTrans span{
     top: 21px;
@@ -107,11 +107,11 @@
 
 @media only screen and (max-width: 1020px) {
   .TransactionList{
-    margin-top:410px;
+    margin-top:420px;
     height:auto;
     width:90%;
     display:table;
-    margin-bottom:20px;
+    margin-bottom:30px;
   }
   .TransactionList_ValueBox{
     height:100%;
@@ -128,7 +128,7 @@
 }
 @media only screen and (max-width: 629px) {
   .TransactionList{
-    margin-top:520px;
+    margin-top:523px;
   }
   .TableOneItem__Value{
     max-width:50px;

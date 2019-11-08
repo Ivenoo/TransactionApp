@@ -32,6 +32,7 @@
   width:100%;
   display:inline-block;
   text-align: center;
+  margin-top:15px;
 }
 .Currency__CurrentCurrency{
   text-align:center;
@@ -56,7 +57,7 @@
   
 }
 .Currency__ValidationBox{
-  margin-top:15px
+  margin-top:10px
 }
 .Currency__ButtonChange{
   font-family: var(--fontfamily-buttons);
@@ -66,7 +67,7 @@
   box-shadow: 3px 3px 2px 2px black;
   transition-duration:1s;
   border-radius:8px;
-  margin-top:18px;
+  margin-top:28px;
   cursor:pointer;
   padding:8px;
   font-size:13px;
